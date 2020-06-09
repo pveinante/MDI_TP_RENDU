@@ -1,46 +1,13 @@
-# TP1 : Principe de conception
-
-## Pattern Visiteur
-
-#### Arbre de syntaxe abstraite de l'expression `Block(Assignment(Variable_Ref("x"),Integer_Value(10)),Print(Variable_Ref("x")))`
-
-![AST](ast.jpg)
-
-#### Définition de Bin_Expression, Integer_Value et Variable_Ref
-
-```
-Bin_Expression  := left: Expression; operator: op; right: Expression
-Integer_Value   := value: Integer
-Variable_Ref    := var_name: String
-```
-
-#### Grammaire concrète :
-
-```
-Block           := "{" Statement* "}"
-Assignment      := var "=" rhs ";"
-Conditional     := "if" "(" cond ")" then_part "else" else_part
-Print           := "print "  value ";"
-Read            := "read " var ";"
-While           := "while" "(" cond ")" body
-Bin_Expression  := left op right ";"
-Integer_value   := value
-Variable_ref    := var_name
-```
-
-
 ## Pattern Decorator et State
 
 ### Question 1
 
-Erreurs détectées :
+Voici les erreurs que nous avons détectées :
 
-- Dans la table Personne : l'attribut numéro de téléphone devrait être dans Collaborateur car un client n'a pas a renseigné son numéro
-- Dans la table Personne : l'adresse n'a pas à être précisé pour un collaborateur
-- Dans la table Commande : il manque le prix de la commande 
-- Selon moi, la taille de la pizza ne devrait pas être précisée par un héritage de la table Pizza, mais plutôt par un attribut.
-- La liste des moyens de transports n'est pas assez exhaustive
-- La table Système manque de méthodes permettant d'affecter un collaborateur à un point pizza ou à une livraison. Elle ne permet pas également de modifier l'ordre de livraison des commandes.
+- Personne : l'attribut numéro de téléphone devrait être dans Collaborateur car un client n'a pas a renseigné son numéro
+- Personne : l'adresse n'a pas à être précisé pour un collaborateur
+- Commande : il n'y a pas le prix de la commande 
+- Système : Il n'y a pas assez de méthodes, nottament pour affecter un collaborateur à un point pizza ou à une livraison. 
 
 ### Question 2
 
