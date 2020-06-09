@@ -1,0 +1,33 @@
+version: "3"
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "8080:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+
+  javapp1:
+        image: javapp
+        restart: always
+        environment: 
+          VIRTUAL_HOST: m
+  javapp2:
+        image: javapp
+        restart: always
+        environment: 
+          VIRTUAL_HOST: m   
+  javapp3:
+        image: javapp
+        restart: always
+        environment: 
+          VIRTUAL_HOST: m   
+  javapp4:
+        image: javapp
+        restart: always
+        environment: 
+          VIRTUAL_HOST: m   
+ 
+ 
+ 
